@@ -1,0 +1,15 @@
+version: '3.0'
+services:
+    mysql:
+
+        image: mysql
+
+        ports:
+        - "3306:3306"
+
+        volumes:
+        - "/opt//mysql/:/var/lib/mysql"
+        - "/etc/localtime:/etc/localtime"
+
+        environment:
+            MYSQL_ROOT_PASSWORD: password1234.
