@@ -1,5 +1,5 @@
 <?php
-require('dbcon.php')
+include 'dbcon.php';
 
 $neve=$_REQUEST['neve'];
 $email=$_REQUEST['email'];
