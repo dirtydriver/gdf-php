@@ -1,5 +1,7 @@
 <html>
-<head></head>
+<head>
+<meta charset="UTF-8">
+</head>
 <body>
 <form  method="post" id="peopleform" action="worker_process.php"></form>
 <table>
