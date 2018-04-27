@@ -13,5 +13,6 @@ echo("Fizetése: ".$fizetes);
 echo("Ágazata: ".$agazat);
 echo("Neme: ".$neme);
 
-
+$insert_query="INSERT INTO `intalk2`.`dolgozo` (`neve`, `email`, `fizetes`, `agazat`, `neme`) VALUES ('$neve', '$email', '$fizetes', '$agazat', '$neme');";
+mysql_query($insert_query,$conn);
 ?>
