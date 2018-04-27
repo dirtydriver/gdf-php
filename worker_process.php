@@ -9,5 +9,5 @@ $neme=$_REQUEST['neme'];
 
 $insert_query="INSERT INTO `intalk2`.`dolgozo` (`neve`, `email`, `fizetes`, `agazat`, `neme`) VALUES ('$neve', '$email', '$fizetes', '$agazat', '$neme');";
 
-run_query($insert_query);
+run_query($insert_query,$conn);
 ?>

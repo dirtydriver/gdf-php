@@ -22,17 +22,17 @@ $tablecreate_query="CREATE TABLE IF NOT EXISTS `intalk2`.`dolgozo` (
     PRIMARY KEY (`dolgozo_id`),
     UNIQUE INDEX `dolgozo_id_UNIQUE` (`dolgozo_id` ASC));";
 
-function run_query($query){
+function run_query($query,$connection){
 
-    if ($conn->query($query) === TRUE) {
+    if ($connection->query($query) === TRUE) {
     } else {
-        echo "Error table : " . $conn->error;
+        echo "Error table : " . $connection->error;
     }
 
 }
 
-run_query($dbcreate_query);
-run_query($tablecreate_query);
+run_query($dbcreate_query,$conn);
+run_query($tablecreate_query,$conn);
 
 
 
