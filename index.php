@@ -17,5 +17,23 @@
 </tr>
 <tr><td><input type="submit" form="peopleform" ></td></tr>
 </table>
+
+ <?php
+ include 'dbcon.php';
+            mysql_select_db("intalk2");
+            $results = mysql_query("SELECT * FROM intalk2 LIMIT 10");
+            while($row = mysql_fetch_array($results)) {
+            ?>
+                <tr>
+                    <td><?php echo $row['neve']?></td>
+                    <td><?php echo $row['email']?></td>
+                    <td><?php echo $row['fizetes']?></td>
+                    <td><?php echo $row['agazat']?></td>
+                    <td><?php echo $row['neme']?></td>
+                </tr>
+
+            <?php
+            }
+            ?>
 <body>
 </html>
