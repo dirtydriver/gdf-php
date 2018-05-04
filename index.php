@@ -20,6 +20,7 @@
 
  <?php
  include 'dbcon.php';
+ echo"<table>";
             $results = mysqli_query($conn,"SELECT * FROM intalk2 LIMIT 10");
             while($row = mysql_fetch_array($results)) {
             ?>
@@ -32,7 +33,8 @@
                 </tr>
 
             <?php
-            }
+           echo"</table>";
+        }
             ?>
 <body>
 </html>
