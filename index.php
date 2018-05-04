@@ -20,8 +20,7 @@
 
  <?php
  include 'dbcon.php';
-            mysql_select_db("intalk2");
-            $results = mysql_query("SELECT * FROM intalk2 LIMIT 10");
+            $results = mysqli_query($conn,"SELECT * FROM intalk2 LIMIT 10");
             while($row = mysql_fetch_array($results)) {
             ?>
                 <tr>
