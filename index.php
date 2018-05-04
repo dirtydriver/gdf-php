@@ -1,3 +1,7 @@
+<?php
+include 'worker_process.php';
+
+?>
 <html>
 <head>
 <meta charset="UTF-8">
