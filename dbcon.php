@@ -1,5 +1,5 @@
 <?php
-$servername = "mysql";
+$servername = "172.20.0.2";
 $username = "root";
 $password = "password1234.";
 
@@ -48,7 +48,7 @@ function run_select($connection){
 
 function create_structure($conn){
     $dbcreate_query="CREATE DATABASE IF NOT EXISTS `intalk2` DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci";
-    $tablecreate_dolgozo="CREATE TABLE IF NOT EXISTS `dolgozo` (
+    $tablecreate_dolgozo="CREATE TABLE IF NOT EXISTS intalk2.`dolgozo` (
     `dolgozo_id` int(11) NOT NULL AUTO_INCREMENT,
     `neve` varchar(45) NOT NULL,
     `email` varchar(45) NOT NULL,
@@ -62,12 +62,12 @@ function create_structure($conn){
     CONSTRAINT `agazat_FK` FOREIGN KEY (`agazat`) REFERENCES `agazat` (`idagazat`) ON DELETE NO ACTION ON UPDATE NO ACTION,
     CONSTRAINT `neme_FK` FOREIGN KEY (`neme`) REFERENCES `neme` (`idneme`) ON DELETE NO ACTION ON UPDATE NO ACTION
     );";
-    $tablecreate_agazat="CREATE TABLE `agazat` (
+    $tablecreate_agazat="CREATE TABLE intalk2.`agazat` (
         `idagazat` int(11) NOT NULL AUTO_INCREMENT,
         `agazat` varchar(45) NOT NULL,
         PRIMARY KEY (`idagazat`);";
     
-    $tablecreate_neme="CREATE TABLE `neme` (
+    $tablecreate_neme="CREATE TABLE intalk2.`neme` (
         `idneme` int(11) NOT NULL AUTO_INCREMENT,
         `neme` varchar(45) DEFAULT NULL,
         PRIMARY KEY (`idneme`)
