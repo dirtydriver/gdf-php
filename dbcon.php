@@ -4,8 +4,13 @@ $username = "root";
 $password = "password1234.";
 $dbname = "intalk2";
 // Create connection
-$conn_first=mysqli_connect($servername, $username, $password);
-$conn = mysqli_connect($servername, $username, $password,$dbname);
+$conn_first=mysqli_connect($servername, $username, $password,$dbname);
+if (!$conn_first) {
+    die("Connection failed: " . mysqli_connect_error());
+    }
+create_db($conn_first);
+
+$conn = mysqli_connect($servername, $username, $password);
 
 // Check connection
 if (!$conn) {
@@ -45,10 +50,14 @@ function run_select($connection){
     
     }
 
+function create_db($conn){
+    $dbcreate_query="CREATE DATABASE IF NOT EXISTS `intalk2` DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci";
+    run_query($dbcreate_query,$conn_first);
+   
+}
 
 
 function create_structure($conn){
-    $dbcreate_query="CREATE DATABASE IF NOT EXISTS `intalk2` DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci";
     $tablecreate_dolgozo="CREATE TABLE IF NOT EXISTS `dolgozo` (
     `dolgozo_id` int(11) NOT NULL AUTO_INCREMENT,
     `neve` varchar(45) NOT NULL,
@@ -77,7 +86,6 @@ function create_structure($conn){
     $insert_agazat="INSERT INTO `intalk2`.`agazat` (`agazat`) VALUES ('IT'),('Gazdaság'),('Könyvelés'),('Üzleti Elemző');";
     $insert_neme="INSERT INTO `intalk2`.`neme` (`neme`) VALUES ('Nő'),('Férfi');";
 
-    run_query($dbcreate_query,$conn_first);
     run_query($tablecreate_agazat,$conn);
     run_query($tablecreate_neme,$conn);
     run_query($tablecreate_dolgoz,$conn);
