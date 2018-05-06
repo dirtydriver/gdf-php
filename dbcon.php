@@ -87,7 +87,7 @@ function create_structure($conn){
 
     run_query($tablecreate_agazat,$conn);
     run_query($tablecreate_neme,$conn);
-    run_query($tablecreate_dolgoz,$conn);
+    run_query($tablecreate_dolgozo,$conn);
     run_query($insert_agazat,$conn);
     run_query($insert_neme,$conn);
     }
