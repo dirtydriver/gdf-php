@@ -1,7 +1,3 @@
-<?php
-include 'worker_process.php';
-
-?>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -27,18 +23,14 @@ include 'worker_process.php';
  echo"<table>";
             $results = mysqli_query($conn,"SELECT * FROM intalk2 LIMIT 10");
             while($row = mysqli_fetch_array($results)) {
-            ?>
-                <tr>
-                    <td><?php echo $row['neve']?></td>
-                    <td><?php echo $row['email']?></td>
-                    <td><?php echo $row['fizetes']?></td>
-                    <td><?php echo $row['agazat']?></td>
-                    <td><?php echo $row['neme']?></td>
-                </tr>
-
-            <?php
-           echo"</table>";
-        }
-            ?>
+                echo '<tr>
+                <td>'.$$row['neve'].'</td>
+                <td>'.$row['email'].'</td>
+                <td>'.$row['fizetes'].'</td>
+                <td>'.$row['agazat']. '</td>
+                <td>'.$row['neme']t.'</td>
+            </tr>';}
+        echo"</table>";
+?>
 <body>
 </html>
