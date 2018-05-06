@@ -71,12 +71,12 @@ function create_structure($conn){
     CONSTRAINT `agazat_FK` FOREIGN KEY (`agazat`) REFERENCES `agazat` (`idagazat`) ON DELETE NO ACTION ON UPDATE NO ACTION,
     CONSTRAINT `neme_FK` FOREIGN KEY (`neme`) REFERENCES `neme` (`idneme`) ON DELETE NO ACTION ON UPDATE NO ACTION
     );";
-    $tablecreate_agazat="CREATE TABLE `agazat` (
+    $tablecreate_agazat="CREATE TABLE IF NOT EXISTS `agazat` (
         `idagazat` int(11) NOT NULL AUTO_INCREMENT,
         `agazat` varchar(45) NOT NULL,
         PRIMARY KEY (`idagazat`));";
     
-    $tablecreate_neme="CREATE TABLE `neme` (
+    $tablecreate_neme="CREATE TABLE IF NOT EXISTS `neme` (
         `idneme` int(11) NOT NULL AUTO_INCREMENT,
         `neme` varchar(45) DEFAULT NULL,
         PRIMARY KEY (`idneme`)) ;";

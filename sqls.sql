@@ -22,8 +22,7 @@ CREATE TABLE `agazat` (
 CREATE TABLE `neme` (
   `idneme` int(11) NOT NULL AUTO_INCREMENT,
   `neme` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idneme`)
-) ;
+  PRIMARY KEY (`idneme`)) ;
 
 
 INSERT INTO `intalk2`.`agazat` (`agazat`) VALUES ('IT'),('Gazdaság'),('Könyvelés'),('Üzleti Elemző');

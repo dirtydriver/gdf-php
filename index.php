@@ -11,16 +11,17 @@
 <tr><td>Ágazat:</td><td><input type="text" name="agazat" value="" form="peopleform"></td></tr>
 <tr>
 <td>Neme:</td>
-<td><input type="radio" name="neme" form="peopleform" value="Nő">Nő</td>
-<td><input type="radio" name="neme" form="peopleform" value="Férfi">Férfi</td>
-<td><input type="radio" name="neme" form="peopleform" value="Még nem döntötte el">Még nem döntötte el</td>
+<select name="neme" form="peopleform">
+<option value="Nő">Nő</option>
+<option value="Férfi">Férfi</option>
+</select>
 </tr>
 <tr><td><input type="submit" form="peopleform" ></td></tr>
 </table>
 
  <?php
  include 'dbcon.php';
- run_select($conn);
+ run_select();
 ?>
 <body>
 </html>
