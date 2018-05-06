@@ -11,10 +11,12 @@
 <tr><td>Ágazat:</td><td><input type="text" name="agazat" value="" form="peopleform"></td></tr>
 <tr>
 <td>Neme:</td>
+<td>
 <select name="neme" form="peopleform">
 <option value="Nő">Nő</option>
 <option value="Férfi">Férfi</option>
 </select>
+</td>
 </tr>
 <tr><td><input type="submit" form="peopleform" ></td></tr>
 </table>
