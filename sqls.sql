@@ -17,7 +17,7 @@ CREATE TABLE `dolgozo` (
 CREATE TABLE `agazat` (
   `idagazat` int(11) NOT NULL AUTO_INCREMENT,
   `agazat` varchar(45) NOT NULL,
-  PRIMARY KEY (`idagazat`);
+  PRIMARY KEY (`idagazat`));
 
 CREATE TABLE `neme` (
   `idneme` int(11) NOT NULL AUTO_INCREMENT,
