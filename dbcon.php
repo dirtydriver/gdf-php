@@ -52,7 +52,7 @@ function run_select($connection){
 
 function create_db($conn){
     $dbcreate_query="CREATE DATABASE IF NOT EXISTS `intalk2` DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci";
-    run_query($dbcreate_query,$conn_first);
+    run_query($dbcreate_query,$conn);
    
     }
 
