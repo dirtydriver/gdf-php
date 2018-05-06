@@ -9,20 +9,7 @@ $conn = mysqli_connect($servername, $username, $password);
 // Check connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
-}
-
-$dbcreate_query="CREATE DATABASE IF NOT EXISTS `intalk2` DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci";
-$tablecreate_query="CREATE TABLE IF NOT EXISTS `intalk2`.`dolgozo` (
-    `dolgozo_id` INT NOT NULL AUTO_INCREMENT,
-    `neve` VARCHAR(45) NOT NULL,
-    `email` VARCHAR(45) NOT NULL,
-    `fizetes` VARCHAR(45) NOT NULL,
-    `agazat` VARCHAR(45) NOT NULL,
-    `neme` VARCHAR(45) NOT NULL,
-    PRIMARY KEY (`dolgozo_id`),
-    UNIQUE INDEX `dolgozo_id_UNIQUE` (`dolgozo_id` ASC));";
-
-
+    }
 
 function run_query($query,$connection){
 
@@ -31,7 +18,7 @@ function run_query($query,$connection){
         echo "Error table : " . $connection->error;
     }
 
-}
+    }
 function run_select($connection){
     
     echo"<table border=\"1\">";
@@ -57,9 +44,47 @@ function run_select($connection){
     
     }
 
-run_query($dbcreate_query,$conn);
-run_query($tablecreate_query,$conn);
 
+
+function create_structure($conn){
+    $dbcreate_query="CREATE DATABASE IF NOT EXISTS `intalk2` DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci";
+    $tablecreate_dolgozo="CREATE TABLE IF NOT EXISTS `dolgozo` (
+    `dolgozo_id` int(11) NOT NULL AUTO_INCREMENT,
+    `neve` varchar(45) NOT NULL,
+    `email` varchar(45) NOT NULL,
+    `fizetes` varchar(45) NOT NULL,
+    `agazat` int(11) NOT NULL,
+    `neme` int(11) NOT NULL,
+    PRIMARY KEY (`dolgozo_id`),
+    UNIQUE KEY `dolgozo_id_UNIQUE` (`dolgozo_id`),
+    KEY `agazat_FK_idx` (`agazat`),
+    KEY `neme_FK_idx` (`neme`),
+    CONSTRAINT `agazat_FK` FOREIGN KEY (`agazat`) REFERENCES `agazat` (`idagazat`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+    CONSTRAINT `neme_FK` FOREIGN KEY (`neme`) REFERENCES `neme` (`idneme`) ON DELETE NO ACTION ON UPDATE NO ACTION
+    );";
+    $tablecreate_agazat="CREATE TABLE `agazat` (
+        `idagazat` int(11) NOT NULL AUTO_INCREMENT,
+        `agazat` varchar(45) NOT NULL,
+        PRIMARY KEY (`idagazat`);";
+    
+    $tablecreate_neme="CREATE TABLE `neme` (
+        `idneme` int(11) NOT NULL AUTO_INCREMENT,
+        `neme` varchar(45) DEFAULT NULL,
+        PRIMARY KEY (`idneme`)
+      ) ;";
+
+    $insert_agazat="INSERT INTO `intalk2`.`agazat` (`agazat`) VALUES ('IT'),('Gazdaság'),('Könyvelés'),('Üzleti Elemző');";
+    $insert_neme="INSERT INTO `intalk2`.`neme` (`neme`) VALUES ('Nő'),('Férfi');";
+
+    run_query($dbcreate_query,$conn);
+    run_query($tablecreate_agazat,$conn);
+    run_query($tablecreate_neme,$conn);
+    run_query($tablecreate_dolgoz,$conn);
+    run_query($insert_agazat,$conn);
+    run_query($insert_neme,$conn);
+    }
+
+create_structure($conn);
 
 
 ?> 
