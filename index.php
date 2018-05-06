@@ -20,26 +20,7 @@
 
  <?php
  include 'dbcon.php';
- echo"<table border=\"1\">";
- echo '<tr>
- <td>Név</td>
- <td>E-mail</td>
- <td>Fizetés</td>
- <td>Ágazat</td>
- <td>Neme</td>
-</tr>';
-
-            $sql='SELECT * FROM intalk2.dolgozo';
-            $results = mysqli_query($conn,$sql);
-            while($row = mysqli_fetch_array($results)) {
-                echo '<tr>
-                <td>'.$row['neve'].'</td>
-                <td>'.$row['email'].'</td>
-                <td>'.$row['fizetes'].'</td>
-                <td>'.$row['agazat']. '</td>
-                <td>'.$row['neme'].'</td>
-            </tr>';}
-        echo"</table>";
+ run_select();
 ?>
 <body>
 </html>
