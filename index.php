@@ -31,7 +31,7 @@
 
             $sql='SELECT * FROM intalk2.dolgozo';
             $results = mysqli_query($conn,$sql);
-            while($row = mysql_fetch_array($results)) {
+            while($row = mysqli_fetch_array($results)) {
                 echo '<tr>
                 <td>'.$row['neve'].'</td>
                 <td>'.$row['email'].'</td>
