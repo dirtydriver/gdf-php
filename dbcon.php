@@ -32,7 +32,7 @@ function run_query($query,$connection){
     }
 
 }
-function run_select($select,$connection){
+function run_select($connection){
     
     echo"<table border=\"1\">";
     echo '<tr>
@@ -44,7 +44,7 @@ function run_select($select,$connection){
    </tr>';
    
                $sql='SELECT * FROM intalk2.dolgozo';
-               $results = mysqli_query($conn,$sql);
+               $results = mysqli_query($connection,$sql);
                while($row = mysqli_fetch_array($results)) {
                    echo '<tr>
                    <td>'.$row['neve'].'</td>
