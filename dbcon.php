@@ -4,13 +4,13 @@ $username = "root";
 $password = "password1234.";
 $dbname = "intalk2";
 // Create connection
-$conn_first=mysqli_connect($servername, $username, $password,$dbname);
+$conn_first=mysqli_connect($servername, $username, $password);
 if (!$conn_first) {
     die("Connection failed: " . mysqli_connect_error());
     }
 create_db($conn_first);
 
-$conn = mysqli_connect($servername, $username, $password);
+$conn = mysqli_connect($servername, $username, $password,$dbname);
 
 // Check connection
 if (!$conn) {
@@ -54,8 +54,7 @@ function create_db($conn){
     $dbcreate_query="CREATE DATABASE IF NOT EXISTS `intalk2` DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci";
     run_query($dbcreate_query,$conn_first);
    
-}
-
+    }
 
 function create_structure($conn){
     $tablecreate_dolgozo="CREATE TABLE IF NOT EXISTS `dolgozo` (
