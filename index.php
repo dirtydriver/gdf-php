@@ -22,11 +22,11 @@
  include 'dbcon.php';
  echo"<table>";
  echo '<tr>
- <td>'Név'</td>
- <td>'E-mail'</td>
- <td>'Fizetés'</td>
- <td>'Ágazat'</td>
- <td>'Neme'</td>
+ <td>Név</td>
+ <td>E-mail</td>
+ <td>Fizetés</td>
+ <td>Ágazat</td>
+ <td>Neme</td>
 </tr>';
             $results = mysqli_query($conn,"SELECT * FROM intalk2 LIMIT 10");
             while($row = mysql_fetch_array($results)) {
