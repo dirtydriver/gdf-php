@@ -11,5 +11,6 @@ $insert_query="INSERT INTO `intalk2`.`dolgozo` (`neve`, `email`, `fizetes`, `aga
 
 run_query($insert_query,$conn);
 
-header("index.php");
+header('Location: index.php');
+exit;
 ?>
