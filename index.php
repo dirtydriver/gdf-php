@@ -29,12 +29,11 @@
  <td>Neme</td>
 </tr>';
 
-
-            $results = mysqli_query($conn,"SELECT * FROM intalk2.dolgozo LIMIT 10");
-            echo $results;
+            $sql='SELECT * FROM intalk2.dolgozo';
+            $results = mysqli_query($conn,$sql);
             while($row = mysql_fetch_array($results)) {
                 echo '<tr>
-                <td>'.$$row['neve'].'</td>
+                <td>'.$row['neve'].'</td>
                 <td>'.$row['email'].'</td>
                 <td>'.$row['fizetes'].'</td>
                 <td>'.$row['agazat']. '</td>
