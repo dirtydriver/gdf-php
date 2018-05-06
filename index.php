@@ -20,7 +20,7 @@
 
  <?php
  include 'dbcon.php';
- echo"<table border="1">";
+ echo"<table border=\"1\">";
  echo '<tr>
  <td>Név</td>
  <td>E-mail</td>
