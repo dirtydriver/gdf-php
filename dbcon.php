@@ -11,7 +11,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$dbcreate_query="CREATE DATABASE IF NOT EXISTS `intalk2`";
+$dbcreate_query="CREATE DATABASE IF NOT EXISTS `intalk2` DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci";
 $tablecreate_query="CREATE TABLE IF NOT EXISTS `intalk2`.`dolgozo` (
     `dolgozo_id` INT NOT NULL AUTO_INCREMENT,
     `neve` VARCHAR(45) NOT NULL,

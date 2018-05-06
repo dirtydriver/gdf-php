@@ -26,7 +26,7 @@ include 'worker_process.php';
  include 'dbcon.php';
  echo"<table>";
             $results = mysqli_query($conn,"SELECT * FROM intalk2 LIMIT 10");
-            while($row = mysql_fetch_array($results)) {
+            while($row = mysqli_fetch_array($results)) {
             ?>
                 <tr>
                     <td><?php echo $row['neve']?></td>
