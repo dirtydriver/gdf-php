@@ -4,6 +4,7 @@ $username = "root";
 $password = "password1234.";
 $dbname = "intalk2";
 // Create connection
+$conn_first=mysqli_connect($servername, $username, $password);
 $conn = mysqli_connect($servername, $username, $password,$dbname);
 
 // Check connection
@@ -76,7 +77,7 @@ function create_structure($conn){
     $insert_agazat="INSERT INTO `intalk2`.`agazat` (`agazat`) VALUES ('IT'),('Gazdaság'),('Könyvelés'),('Üzleti Elemző');";
     $insert_neme="INSERT INTO `intalk2`.`neme` (`neme`) VALUES ('Nő'),('Férfi');";
 
-    run_query($dbcreate_query,$conn);
+    run_query($dbcreate_query,$conn_first);
     run_query($tablecreate_agazat,$conn);
     run_query($tablecreate_neme,$conn);
     run_query($tablecreate_dolgoz,$conn);
