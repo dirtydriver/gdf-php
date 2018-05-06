@@ -74,13 +74,12 @@ function create_structure($conn){
     $tablecreate_agazat="CREATE TABLE `agazat` (
         `idagazat` int(11) NOT NULL AUTO_INCREMENT,
         `agazat` varchar(45) NOT NULL,
-        PRIMARY KEY (`idagazat`);";
+        PRIMARY KEY (`idagazat`));";
     
     $tablecreate_neme="CREATE TABLE `neme` (
         `idneme` int(11) NOT NULL AUTO_INCREMENT,
         `neme` varchar(45) DEFAULT NULL,
-        PRIMARY KEY (`idneme`)
-      ) ;";
+        PRIMARY KEY (`idneme`)) ;";
 
     $insert_agazat="INSERT INTO `intalk2`.`agazat` (`agazat`) VALUES ('IT'),('Gazdaság'),('Könyvelés'),('Üzleti Elemző');";
     $insert_neme="INSERT INTO `intalk2`.`neme` (`neme`) VALUES ('Nő'),('Férfi');";
