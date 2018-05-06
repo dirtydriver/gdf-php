@@ -28,7 +28,10 @@
  <td>Ágazat</td>
  <td>Neme</td>
 </tr>';
-            $results = mysqli_query($conn,"SELECT * FROM intalk2 LIMIT 10");
+
+
+            $results = mysqli_query($conn,"SELECT * FROM intalk2.dolgozo LIMIT 10");
+            echo $results;
             while($row = mysql_fetch_array($results)) {
                 echo '<tr>
                 <td>'.$$row['neve'].'</td>
