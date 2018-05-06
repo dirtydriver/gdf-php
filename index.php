@@ -21,14 +21,21 @@
  <?php
  include 'dbcon.php';
  echo"<table>";
+ echo '<tr>
+ <td>'Név'</td>
+ <td>'E-mail'</td>
+ <td>'Fizetés'</td>
+ <td>'Ágazat'</td>
+ <td>'Neme'</td>
+</tr>';
             $results = mysqli_query($conn,"SELECT * FROM intalk2 LIMIT 10");
-            while($row = mysqli_fetch_array($results)) {
+            while($row = mysql_fetch_array($results)) {
                 echo '<tr>
                 <td>'.$$row['neve'].'</td>
                 <td>'.$row['email'].'</td>
                 <td>'.$row['fizetes'].'</td>
                 <td>'.$row['agazat']. '</td>
-                <td>'.$row['neme']t.'</td>
+                <td>'.$row['neme'].'</td>
             </tr>';}
         echo"</table>";
 ?>
