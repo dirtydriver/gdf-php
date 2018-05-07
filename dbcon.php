@@ -81,8 +81,8 @@ function create_structure($conn){
         `neme` varchar(45) DEFAULT NULL,
         PRIMARY KEY (`idneme`)) ;";
 
-    $insert_agazat="INSERT INTO `intalk2`.`agazat` (`agazat`) VALUES ('IT'),('Gazdaság'),('Könyvelés'),('Üzleti Elemző');";
-    $insert_neme="INSERT INTO `intalk2`.`neme` (`neme`) VALUES ('Nő'),('Férfi');";
+    $insert_agazat="INSERT IGNORE INTO `intalk2`.`agazat` (`agazat`) VALUES ('IT'),('Gazdaság'),('Könyvelés'),('Üzleti Elemző');";
+    $insert_neme="INSERT IGNORE INTO `intalk2`.`neme` (`neme`) VALUES ('Nő'),('Férfi');";
 
     run_query($tablecreate_agazat,$conn);
     run_query($tablecreate_neme,$conn);
