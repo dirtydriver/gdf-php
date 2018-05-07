@@ -12,7 +12,7 @@
 <td>
 <?php
 include 'dbcon.php';
-create_selecttag("agazat");
+create_selecttag("agazat",$conn);
 ?>
 </td>
 </tr>
@@ -21,7 +21,7 @@ create_selecttag("agazat");
 <td>
 <?php
 include 'dbcon.php';
-create_selecttag("neme");
+create_selecttag("neme",$conn);
 ?>
 </td>
 </tr>
@@ -30,7 +30,7 @@ create_selecttag("neme");
 
  <?php
  include 'dbcon.php';
- create_resulttable();
+ create_resulttable($conn);
 ?>
 <body>
 </html>
