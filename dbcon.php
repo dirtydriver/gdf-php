@@ -57,7 +57,7 @@ function create_db($conn){
     run_query($dbcreate_query,$conn);
    
     }
-function create_selecttag($tablename){
+function create_selecttag($tablename,$connection){
 
     if($tablename =="neme"){
         $sql='SELECT * FROM intalk2.'.$tablename.'';
