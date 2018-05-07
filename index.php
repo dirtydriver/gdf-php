@@ -23,7 +23,7 @@
 
  <?php
  include 'dbcon.php';
- run_select();
+ create_resulttable();
 ?>
 <body>
 </html>

@@ -25,7 +25,8 @@ function run_query($query,$connection){
     }
 
     }
-function run_select($connection){
+function create_resulttable($connection){
+
     
     echo"<table border=\"1\">";
     echo '<tr>
@@ -50,11 +51,34 @@ function run_select($connection){
     
     }
 
+
 function create_db($conn){
     $dbcreate_query="CREATE DATABASE IF NOT EXISTS `intalk2` DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci";
     run_query($dbcreate_query,$conn);
    
     }
+function create_selecttag($tablename){
+
+    if($tablename =="neme"){
+        $sql='SELECT * FROM intalk2.'.$tablename.'';
+        $results = mysqli_query($connection,$sql);
+        echo '<select name="neme" form="peopleform">';
+        while($row = mysqli_fetch_array($results)) {
+            echo '<option value="'.$row['idneme'].'">'.$row['neme'].'</option>';}
+            echo'</select>';
+
+    } else {
+        $sql='SELECT * FROM intalk2.'.$tablename.'';
+        $results = mysqli_query($connection,$sql);
+        echo '<select name="neme" form="peopleform">';
+        while($row = mysqli_fetch_array($results)) {
+            echo '<option value="'.$row['idagazat'].'">'.$row['agazat'].'</option>';}
+            echo'</select>';
+
+    }
+    
+
+}
 
 function create_structure($conn){
     $tablecreate_dolgozo="CREATE TABLE IF NOT EXISTS `dolgozo` (
