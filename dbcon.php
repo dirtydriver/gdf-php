@@ -37,7 +37,8 @@ function create_resulttable($connection){
     <td>Neme</td>
    </tr>';
    
-               $sql='SELECT * FROM intalk2.dolgozo';
+               $sql='SELECT neve , email , fizetes , a.agazat , n.neme FROM intalk2.dolgozo d , intalk2.agazat a , intalk2.neme n
+               Where d.agazat = a.idagazat AND d.neme = n.idneme ;';
                $results = mysqli_query($connection,$sql);
                while($row = mysqli_fetch_array($results)) {
                    echo '<tr>
