@@ -70,7 +70,7 @@ function create_selecttag($tablename,$connection){
     } else {
         $sql='SELECT * FROM intalk2.'.$tablename.'';
         $results = mysqli_query($connection,$sql);
-        echo '<select name="neme" form="peopleform">';
+        echo '<select name="agazat" form="peopleform">';
         while($row = mysqli_fetch_array($results)) {
             echo '<option value="'.$row['idagazat'].'">'.$row['agazat'].'</option>';}
             echo'</select>';
