@@ -91,7 +91,7 @@ function create_structure($conn){
     run_query($insert_neme,$conn);
     }
 
-$val = mysql_query('select * from dolgozo LIMIT 1');
+$val = mysqli_query($conn,'select * from dolgozo LIMIT 1');
 
 if($val == FALSE){
     create_structure($conn);    
