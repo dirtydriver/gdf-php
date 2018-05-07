@@ -20,16 +20,13 @@ create_selecttag("agazat",$conn);
 <td>Neme:</td>
 <td>
 <?php
-include 'dbcon.php';
 create_selecttag("neme",$conn);
 ?>
 </td>
 </tr>
 <tr><td><input type="submit" form="peopleform" ></td></tr>
 </table>
-
- <?php
- include 'dbcon.php';
+<?php
  create_resulttable($conn);
 ?>
 <body>

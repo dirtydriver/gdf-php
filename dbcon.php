@@ -59,7 +59,7 @@ function create_db($conn){
     }
 function create_selecttag($tablename,$connection){
 
-    if($tablename =="neme"){
+    if($tablename ==="neme"){
         $sql='SELECT * FROM intalk2.'.$tablename.'';
         $results = mysqli_query($connection,$sql);
         echo '<select name="neme" form="peopleform">';
@@ -79,7 +79,6 @@ function create_selecttag($tablename,$connection){
     
 
 }
-
 function create_structure($conn){
     $tablecreate_dolgozo="CREATE TABLE IF NOT EXISTS `dolgozo` (
     `dolgozo_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -113,7 +112,7 @@ function create_structure($conn){
     run_query($tablecreate_dolgozo,$conn);
     run_query($insert_agazat,$conn);
     run_query($insert_neme,$conn);
-    }
+}
 
 $val = mysqli_query($conn,'select * from dolgozo LIMIT 1');
 
