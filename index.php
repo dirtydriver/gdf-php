@@ -26,7 +26,6 @@ create_selecttag("neme",$conn);
 </tr>
 <tr><td><input type="submit" form="peopleform" ></td></tr>
 </table>
-<form  method="post" id="queryform" action="filter.php"></form>
 <h3>Ágazat Szűrő</h3>
 <?php
 $sql='SELECT * FROM intalk2.agazat';
@@ -51,7 +50,7 @@ while($row = mysqli_fetch_array($results)) {
 
 
 ?>
-<input type="submit" form="queryform" >
+<input type="submit" >
 
 <?php
 $agazatfilter=$_REQUEST['agazatquery'];
