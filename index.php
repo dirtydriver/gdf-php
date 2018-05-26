@@ -29,7 +29,7 @@ create_selecttag("neme",$conn);
 <form  method="post" id="queryform" action="filter.php"></form>
 <h3>Ágazat Szűrő</h3>
 <?php
-$sql='SELECT * FROM intalk2.agazat';
+$sql='SELECT * FROM intalk2.'.$tablename.'';
 $results = mysqli_query($conn,$sql);
 echo '<select name="agazatquery">';
 while($row = mysqli_fetch_array($results)) {
@@ -81,12 +81,15 @@ function create_resulttable($agazat){
             <td>'.$row['neme'].'</td>
         </tr>';}
     echo"</table>";
-        
-            }
+}
 
-create_resulttable($agazatfilter);
-
-
+if(isset($_POST['submit']))
+{
+    create_resulttable($agazatfilter);
+} 
+    
+    
 ?>
+
 <body>
 </html>
