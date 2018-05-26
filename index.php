@@ -53,6 +53,12 @@ while($row = mysqli_fetch_array($results)) {
 ?>
 <?php
 
+if(isset($_POST['filterbtn']))
+{
+    echo "Kiskutya";
+    $agazatfilter=$_REQUEST['agazatquery'];
+    create_resulttable($agazatfilter);
+} 
 
 
 function create_resulttable($agazat){
@@ -81,12 +87,6 @@ function create_resulttable($agazat){
     echo"</table>";
 }
 
-if(isset($_POST['filterbtn']))
-{
-    echo "Kiskutya";
-    $agazatfilter=$_REQUEST['agazatquery'];
-    create_resulttable($agazatfilter);
-} 
     
     
 ?>
