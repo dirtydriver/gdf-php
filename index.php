@@ -37,6 +37,7 @@ while($row = mysqli_fetch_array($results)) {
 
 ?>
 
+<button type='submit' name='filter_btn'>Szűrés</button>
 
 <?php
   echo"<table border=\"1\">";
@@ -50,7 +51,6 @@ while($row = mysqli_fetch_array($results)) {
 
 
 ?>
-<button type='submit' name='filter_btn'>Szűrés</button>
 <?php
 
 
