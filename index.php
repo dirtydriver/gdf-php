@@ -83,7 +83,7 @@ function create_resulttable($agazat){
 
 if(isset($_POST['filter_btn']))
 {
-    
+    echo "Kiskutya";
     $agazatfilter=$_REQUEST['agazatquery'];
     create_resulttable($agazatfilter);
 } 
