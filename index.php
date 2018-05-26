@@ -30,7 +30,7 @@ create_selecttag("neme",$conn);
 <h3>Ágazat Szűrő</h3>
 <?php
 $sql='SELECT * FROM intalk2.'.$tablename.'';
-$results = mysqli_query($connection,$sql);
+$results = mysqli_query($conn,$sql);
 echo '<select name="agazatquery">';
 while($row = mysqli_fetch_array($results)) {
     echo '<option value="'.$row['idagazat'].'">'.$row['agazat'].'</option>';}
