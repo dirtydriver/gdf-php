@@ -1,7 +1,7 @@
 <?php
-$servername = "172.20.0.2";
+$servername = "127.0.0.1";
 $username = "root";
-$password = "password1234.";
+$password = "";
 $dbname = "intalk2";
 // Create connection
 $conn_first=mysqli_connect($servername, $username, $password);
@@ -25,33 +25,6 @@ function run_query($query,$connection){
     }
 
     }
-function create_resulttable($connection){
-
-    
-    echo"<table border=\"1\">";
-    echo '<tr>
-    <td>Név</td>
-    <td>E-mail</td>
-    <td>Fizetés</td>
-    <td>Ágazat</td>
-    <td>Neme</td>
-   </tr>';
-   
-               $sql='SELECT neve , email , fizetes , a.agazat , n.neme FROM intalk2.dolgozo d , intalk2.agazat a , intalk2.neme n
-               Where d.agazat = a.idagazat AND d.neme = n.idneme ;';
-               $results = mysqli_query($connection,$sql);
-               while($row = mysqli_fetch_array($results)) {
-                   echo '<tr>
-                   <td>'.$row['neve'].'</td>
-                   <td>'.$row['email'].'</td>
-                   <td>'.$row['fizetes'].'</td>
-                   <td>'.$row['agazat']. '</td>
-                   <td>'.$row['neme'].'</td>
-               </tr>';}
-           echo"</table>";
-    
-    }
-
 
 function create_db($conn){
     $dbcreate_query="CREATE DATABASE IF NOT EXISTS `intalk2` DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci";
