@@ -26,8 +26,32 @@ create_selecttag("neme",$conn);
 </tr>
 <tr><td><input type="submit" form="peopleform" ></td></tr>
 </table>
+<form  method="post" id="queryform" action="filter.php"></form>
+<h3>Ágazat Szűrő</h3>
 <?php
- create_resulttable($conn);
+$sql='SELECT * FROM intalk2.'.$tablename.'';
+$results = mysqli_query($connection,$sql);
+echo '<select name="agazatquery">';
+while($row = mysqli_fetch_array($results)) {
+    echo '<option value="'.$row['idagazat'].'">'.$row['agazat'].'</option>';}
+    echo'</select>';
+
 ?>
+
+
+<?php
+  echo"<table border=\"1\">";
+  echo '<tr>
+  <td>Név</td>
+  <td>E-mail</td>
+  <td>Fizetés</td>
+  <td>Ágazat</td>
+  <td>Neme</td>
+ </tr>';
+
+
+?>
+<input type="submit" form="queryform" >
+
 <body>
 </html>
