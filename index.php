@@ -37,7 +37,7 @@ while($row = mysqli_fetch_array($results)) {
 
 ?>
 
-<input type="submit" name="filterbtn" value="submit">
+<input type="submit" name="filterbtn" value="Szürés">
 
 <?php
   echo"<table border=\"1\">";
