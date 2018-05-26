@@ -29,7 +29,7 @@ create_selecttag("neme",$conn);
 <form  method="post" id="queryform" action="filter.php"></form>
 <h3>Ágazat Szűrő</h3>
 <?php
-$sql='SELECT * FROM intalk2.'.$tablename.'';
+$sql='SELECT * FROM intalk2.agazat';
 $results = mysqli_query($conn,$sql);
 echo '<select name="agazatquery">';
 while($row = mysqli_fetch_array($results)) {
