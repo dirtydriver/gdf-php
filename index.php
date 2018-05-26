@@ -37,7 +37,7 @@ while($row = mysqli_fetch_array($results)) {
 
 ?>
 
-<button type='submit' name='filter_btn'>Szűrés</button>
+<input type="submit" name="filterbtn" value="submit">
 
 <?php
   echo"<table border=\"1\">";
@@ -81,7 +81,7 @@ function create_resulttable($agazat){
     echo"</table>";
 }
 
-if(isset($_POST['filter_btn']))
+if(isset($_POST['filterbtn']))
 {
     echo "Kiskutya";
     $agazatfilter=$_REQUEST['agazatquery'];
